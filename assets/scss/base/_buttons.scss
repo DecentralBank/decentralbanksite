@@ -1,0 +1,60 @@
+/* #Buttons
+================================================== */
+
+.button,
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background: $button-color;
+  border: 1px solid $button-border-color;
+  font-weight: $bold;
+  @include border-radius(0);
+  color: $button-text-color;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  line-height: normal;
+  padding: 8px 15px;
+  @include transition(all, .2s);
+}
+
+.button:hover,
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  color: $button-hover-text-color;
+  background: $button-hover-color;
+  border: 1px solid $button-hover-border-color;
+}
+
+.button:active,
+a.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  color: $button-hover-text-color;
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center; }
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

@@ -1,0 +1,20 @@
+/* #Images
+================================================== */
+figure {
+  margin: 0;
+}
+
+img {
+  &.scale-with-grid {
+    max-width: 100%;
+    height: auto;
+  }
+  &.responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
+  &.fluid-image {
+    width: 100%;
+    height: auto;
+  }
+}

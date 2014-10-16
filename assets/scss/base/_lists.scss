@@ -1,0 +1,25 @@
+/* Styled Lists */
+
+ul.styled-list,
+ol.styled-list {
+  clear: both;
+  margin-left: 2em;
+}
+.styled-list li {
+  display: block;
+  line-height: normal;
+  margin-bottom: 10px;
+  list-style: none outside none;
+  width: 100%;
+  position: relative;
+}
+.styled-list li:before {
+  @extend .icon-dot;
+  color: $primary-color;
+  font-size: 32px;
+  display: inline-block;
+  position: absolute;
+  top: -7px;
+  left: -21px;
+  font-family: 'fontello';
+}

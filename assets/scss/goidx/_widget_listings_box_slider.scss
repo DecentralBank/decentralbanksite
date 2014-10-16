@@ -1,0 +1,114 @@
+.bx-wrapper {
+  padding: 0 60px;
+  .bx-viewport {
+    background: transparent;
+  }
+}
+
+.widget-listing .w-ft-list {
+  color: #202020;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.widget-listing .w-ft-list .main-image {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.widget-listing .w-ft-list .main-image:after {
+  content: '';
+  padding-top: 75%; /*MLS images Aspect Ratio*/
+  display: block;
+}
+.widget-listing .w-ft-list img {
+  width: 100%;
+  position: absolute;
+  max-height: 100%;
+}
+
+.widget-listing .w-ft-list .pre-info {
+  padding: 8px 10px;
+  background: white;
+  opacity: 1;
+  @include transition(all .3s ease-in-out);
+}
+.widget-listing .w-ft-list .pre-info .address{
+  color: $primary-color;
+  font-size: 16px;
+}
+.widget-listing .w-ft-list .pre-info .price{
+  color: $secondary-color;
+  font-weight: $extrabold;
+}
+
+.widget-listing .w-ft-list .the-info {
+  position: absolute;
+  width: 100%;
+  padding: 15px;
+  top: 0;
+  bottom: 0;
+  color: #FFF;
+  background: rgba($primary-color, .8);
+  @include backface-visibility(hidden);
+  @include translate(0, 100%);
+  @include transition(all .2s ease-in-out);
+}
+.widget-listing .w-ft-list:hover .pre-info {
+  opacity: 0;
+}
+.widget-listing .w-ft-list:hover .the-info {
+  bottom: 0;
+  @include translate(0, 0);
+}
+
+.widget-listing .w-ft-list .the-info .p-address{
+}
+.widget-listing .w-ft-list .the-info .address-1{
+  font-size: 24px;
+  font-weight: $extrabold;
+  margin: 0px;
+  padding: 0px;
+  color: #FFF;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.widget-listing .w-ft-list .the-info .address-2{
+  font-weight: $regular;
+  font-size: 17px;
+  color: white;
+}
+
+.widget-listing .w-ft-list .the-info .bed-bath{
+  font-size: 19px;
+  line-height: normal;
+  font-weight: $regular;
+  margin-bottom: 7px;
+}
+.widget-listing .w-ft-list .the-info .beds,
+.widget-listing .w-ft-list .the-info .baths{
+  display: inline-block;
+}
+.widget-listing .w-ft-list .the-info .bed-bath span{
+  font-weight: $extrabold;
+}
+.widget-listing .w-ft-list .the-info > .price{
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: $extrabold;
+}
+
+.widget-listing .w-ft-list .the-info a.details{
+  color: white;
+  display: block;
+  width: 100%;
+  font-size: 21px;
+  text-align: center;
+  padding: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

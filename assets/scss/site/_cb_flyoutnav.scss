@@ -1,0 +1,461 @@
+/* Menu Variables */
+
+$toggle-color: $primary-color;
+
+$sm-nav-bg: white;
+$med-nav-bg: none;
+$med-navbar-bg: white;
+$med-navbar-color: $primary-color;
+$med-navbar-font-weight: $regular;
+$med-navbar-active-link-color: lighten($primary-color, 30%);
+$med-navbar-active-caret-color: lighten($primary-color, 30%);
+$med-navbar-active-link-bg: white;
+$med-subnav-active-link-bg: $secondary-color;
+$med-subnav-active-link-color: white;
+$subnav-bg : white;
+
+$flyout-bg: darken($primary-color, 3);
+$flyout-sub-bg : lighten($flyout-bg, 3);
+$flyout-text-color: white;
+$flyout-active-link-bg: $secondary-color;
+$flyout-active-link-color: white;
+
+$flyout-width: 270px;
+$flyout-sub-width: 180px;
+$layout-min-width: 320px;
+
+// Define background for layout wrapper
+@mixin main-layout-content-bg() {
+  background-color: white;
+}
+/**********************************************************/
+
+/* Menu Toggle */
+.btn-navbar {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  padding: 4px 0;
+  display: block;
+  z-index: 1;
+  .icon-bar {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: $toggle-color;
+    margin: 7px auto 0 auto;
+    & + .icon-bar {
+      margin-top: 3px;
+    }
+  }
+}
+.btn-navbar-navtoggle {
+  /* 	margin-right: 10px;
+      float: left; */
+}
+
+/* Header nav bar */
+.main-header {
+  border-top: 7px solid $primary-color;
+  box-shadow: 0 1px 2px 0px rgba(105, 105, 105, 0.20);
+  //  border-bottom: 1px solid $primary-color;
+  width: 100%;
+  z-index: 20;
+
+  .top-wrap{
+    padding: 5px 0;
+    background: $sm-nav-bg;
+    color: $base-font-color;
+    @include min-bp(med) {
+      background: $med-nav-bg;
+      padding: 0px 0;
+    }
+    .top-right {
+      padding: 15px 0;
+      display: inline-block;
+      float: right;
+      text-align: right;
+      .tagline {
+        font-size: 1.4em;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      a {
+        display: block;
+        font-size: 1.4em;
+        font-weight: $extrabold;
+      }
+    }
+  }
+
+  .bottom-wrap {
+    background: $med-navbar-bg;
+  }
+
+  .logo {
+    max-width: 190px;
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      vertical-align: middle;
+    }
+    @include min-bp(sm) {
+      max-width: 260px;
+      margin-left: 15px;
+    }
+    @include min-bp(med) {
+      display: inline-block;
+      float: left;
+      width: auto;
+      margin-left: 10px;
+      padding: 5px 0;
+      max-width: 360px;
+    }
+
+  }
+
+  .logo-mobile {
+    display: inline-block;
+    float: left;
+    width: 120px;
+    padding: 0px 0;
+
+  }
+}
+
+/***** The Nav *****/
+
+/* cbFlyNav Req Styles */
+body {
+  position: relative;
+  -ms-overflow-x: hidden;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.layout-left-flyout {
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  background: $flyout-bg;
+  visibility: hidden;
+  @include transition(visibility linear .2s);
+  @include perspective(1000);
+  @include backface-visibility(hidden);
+  @include transform-style(preserve-3d);
+  &.isCbFlyNavActive{
+    visibility: visible;
+    @include transition(z-index linear .2s);
+    z-index: 1;
+  }
+}
+
+.cbFlyNav-wrap {
+  display: block;
+  position: relative;
+  width: $flyout-width;
+  height: 100%;
+  overflow: hidden;
+  @include box-shadow(1px 0 1px 0 rgba(#a7a7a7, .35));
+  @include perspective(1000);
+  @include backface-visibility(hidden);
+  @include transform-style(preserve-3d);
+  & > nav {
+    @include translateY(0);
+    @include transition(transform 0 ease-in-out);
+    /* height:  100%;
+    -ms-overflow-y:  auto;
+    overflow-y:  auto;
+    */
+  }
+}
+.nav-collapse {
+  @include translate3d(0,0,0);
+  @include transform-style(preserve-3d);
+  @include min-bp(med) {
+    @include transform(none);
+    @include transform-style(flat);
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-header .nav-collapse {
+    display: none;
+  }
+}
+
+.layout-right-content {
+  @include transition(transform .2s ease-in-out);
+  @include translate3d(0,0,0);
+  @include perspective(1000);
+  @include backface-visibility(hidden);
+  @include transform-style(preserve-3d);
+  z-index: 1;
+
+  /* NOTE! Put container bg here so you don't
+  get any clipping when the content is
+  transitioning. Any tips on alternate
+  solutions are welcome.
+  */
+  @include main-layout-content-bg();
+
+  &.isCbFlyNavActive {
+    @include translate3d($flyout-width, 0, 0);
+    min-width: $layout-min-width;
+  }
+}
+a {
+  .icon-cbmore {
+    content: "";
+    float: right;
+    margin-top: 4.5px;
+    padding: 4.5px;
+    @include box-shadow(1px -1px 0 0 $flyout-text-color inset);
+    @include rotate(225deg);
+  }
+  &:hover .icon-cbmore {
+    @include box-shadow(1px -1px 0 0 $flyout-active-link-color inset);
+  }
+}
+.nav-flyout-navmask,
+.nav-flyout-contentmask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.nav-flyout-contentmask {
+  z-index: 1;
+}
+.nav-flyout-navmask {
+  right: $flyout-sub-width;
+  z-index: 1;
+}
+
+/* Large Screen Styles*/
+@include min-bp(med) {
+  .the-nav {
+    display: block;
+    margin-top: 0;
+    position: relative;
+    .nav {
+      display: block;
+    }
+    .nav-pill {
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+    > .nav {
+      margin: 0;
+      line-height: normal;
+      > li {
+        display: inline-block;
+        margin-bottom: 0;
+        position: relative;
+        letter-spacing: -1px;
+        font-size: 17px;
+        .caret {
+          margin-top: 8px;
+          margin-left: 5px;
+          border-top-color: $med-navbar-color;
+          border-bottom-color: $med-navbar-color;
+        }
+        a {
+          display: block;
+          padding: 12px 10px 12px;
+          color: $med-navbar-color;
+          font-size: $base-em-font*1.2em;
+          font-weight: $med-navbar-font-weight;
+          text-decoration: none;
+          &.active {
+            color: $med-navbar-active-link-color;
+          }
+        }
+        &:nth-of-type(1) > a {
+
+        }
+        &:last-of-type > a {
+
+        }
+
+        /* Active State */
+        &:hover {
+          > a {
+            color: $med-navbar-active-link-color;
+            background: $med-navbar-active-link-bg;
+          }
+          .subnav {
+            display: block;
+          }
+          .caret {
+            border-top-color: $med-navbar-active-caret-color;
+            border-bottom-color: $med-navbar-active-caret-color;
+          }
+        }
+
+      }
+    }
+  }
+
+  /* Subnav */
+  .nav > li .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+    min-width: 160px;
+    background: $subnav-bg;
+    border-top: 1px solid $med-subnav-active-link-bg;
+    box-shadow: 0 1px 1px 0px #DDDDDD;
+    > li {
+      margin-bottom: 0;
+      a {
+        font-weight: $regular;
+        font-size: $base-em-font*1.2em;
+        color: $med-navbar-color;
+        @include transition(all .2s);
+        padding: 7px 10px;
+      }
+      &:hover a {
+        color:  $med-subnav-active-link-color;
+        background: $med-subnav-active-link-bg;
+      }
+      .divider {
+        background-color: #DDD;
+        height: 1px;
+        margin: 5px 1px;
+        overflow: hidden;
+      }
+    }
+  }
+  .nav.pull-right > li .subnav {
+    left: auto;
+    right: 0;
+  }
+
+  /* Utils Nav */
+  .the-nav {
+    .utils-nav {
+      position: absolute;
+      right: 0;
+      top: -60px;
+      > li {
+        > a {
+          color: $secondary-color;
+          padding: 10px;
+          font-size: 1em;
+        }
+        &:hover > a {
+          color: $primary-color;
+        }
+      }
+      .user a.signed-in {
+        color: $med-navbar-active-link-bg;
+      }
+      .search input[type="text"] {
+        width: 270px !important;
+      }
+    }
+  }
+}
+
+/* Soft Mobile First Utils */
+.soft-hidden-sm,
+.container.soft-hidden-sm {
+  display: none;
+  @include min-bp(med){
+    display: block;
+  }
+}
+.soft-visible-sm,
+.container.soft-visible-sm {
+  @include min-bp(med) {
+    display: none !important;
+  }
+}
+
+/* Mobile First Nav Styles */
+.the-nav {
+  ul.nav-flyout {
+    display: block;
+    margin-bottom: 15px;
+    float: none;
+    /* height: 100%; */
+    > li {
+      float: none;
+      display: block;
+      margin-bottom: 0;
+      width: $flyout-width;
+    }
+    li {
+      a {
+        color: $flyout-text-color;
+        display: block;
+        text-decoration: none;
+        padding: 11px 15px;
+        margin-right: 0;
+        &:hover {
+          background: $flyout-active-link-bg;
+          color: $flyout-active-link-color;
+        }
+        &.active {
+          color: $flyout-active-link-bg;
+          &:hover {
+            color: $flyout-text-color;
+          }
+        }
+      }
+    }
+    .dropdown {
+      position: static;
+      .subnav {
+        float: none;
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 0;
+        min-width: 0;
+        margin: 0;
+        list-style: none;
+        z-index: 1000;
+        background: $flyout-sub-bg;
+        @include transition(width .2s ease-in-out);
+        > li {
+          width: $flyout-sub-width;
+          margin-bottom: 0;
+        }
+        &.is-subnav-visible {
+          width: $flyout-sub-width;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+
+}
+
+.nav > .dropdown li.divider {
+  background-color: #CECECF;
+  height: 1px;
+  margin: 5px 1px;
+  overflow: hidden;
+}
+
+.the-nav.is-inactive ul.nav-flyout > li > a {
+  opacity: .2;
+}
+.the-nav.is-inactive ul.nav-flyout > li.is-active > a {
+  opacity: 1;
+  background: $flyout-active-link-bg;
+}

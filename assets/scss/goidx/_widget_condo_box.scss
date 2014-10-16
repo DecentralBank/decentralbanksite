@@ -1,0 +1,75 @@
+.featured-condos {
+  .building {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: #F5F5F5;
+    border: 1px solid #EBEBEB;
+    .main-image {
+      display: block;
+      position: relative;
+      width: 100%;
+      img {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+      }
+      &:after {
+        content: '';
+        padding-top: 89.47%;
+        display: block;
+      }
+    }
+    .building-name .name{
+      text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      background: $primary-color;
+      border: 1px solid darken($primary-color, 3);
+      padding: 6px 0;
+    }
+    .the-info {
+      @include transition(all .3s ease-out);
+      .name {
+        font-size: 25px;
+        font-weight: 800;
+        margin: 0px;
+        padding: 0px;
+        color: #FFF;
+        line-height: normal;
+        letter-spacing: normal
+      }
+      .area {
+        font-weight: $regular;
+        font-size: 1.2em;
+        margin: 3px 0;
+        text-align: center;
+        color: $secondary-color;
+        line-height: 1.5em;
+      }
+      .links {
+        margin-top: 10px;
+        text-align: center;
+        a {
+          font-size: 13px;
+          padding: 0 3px;
+          line-height: normal;
+          font-weight: $light;
+          display: inline-block;
+        }
+      }
+      .details {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        padding: 3px 0;
+      }
+    }
+  }
+}

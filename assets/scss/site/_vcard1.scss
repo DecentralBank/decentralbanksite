@@ -1,0 +1,28 @@
+.v-card {
+  &.module {
+    padding: 7px;
+  }
+  border: 1px solid lighten($secondary-color, 30);
+  .agent-image {
+    @include aspect-ratio(100%);
+  }
+  .details {
+    .name {
+      font-size: $base-em-font*1.5em;
+      line-height: $base-em-font*1.2em;
+      margin-bottom: 5px;
+    }
+    .title {
+      font-size: $base-em-font*1em;
+      line-height: $base-em-font*1.2em;
+      margin: 0 0 7px 0;
+    }
+    .phone {
+      color: $secondary-color;
+      display: block;
+    }
+    .email {
+      @extend .phone;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.bx-wrapper {
+  padding: 0 60px;
+}
+
+.condo-slide-content {
+  padding: 10px 5px;
+  a {
+    text-decoration: none;
+    display: block;
+  }
+  .photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    &:after {
+      content: '';
+      padding-top: 89.47%;
+      display: block;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+    }
+  }
+  .info {
+    padding: 10px 5px;
+    .name-loc {
+      width: 90%;
+      display: inline-block;
+      float: left;
+    }
+    .building-name{
+      margin-bottom: 0;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      font-weight: 300;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .view {
+      width: 10%;  display: inline-block;
+      text-align: right;
+    }
+  }
+}

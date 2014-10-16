@@ -1,0 +1,36 @@
+/* Tables
+ *******************/
+
+.default-table  {
+  margin-top: .5em;
+  width:100%;
+}
+
+.default-table  td {
+  padding: 7px 4px; text-align: left; font-size: .9em;
+}
+
+.default-table thead th, .default-table tbody th {
+  padding: 7px 4px;
+  text-align: left;
+  font-size: .9em;
+}
+.default-table.centered th,
+.default-table.centered td {
+  text-align: center;
+}
+.primary-table th {
+  background-color: $primary-table-color;
+  color: $primary-table-text-color;
+}
+
+.secondary-table th {
+  background-color: $secondary-table-color;
+  color: $secondary-table-text-color;
+}
+.primary-table.striped tr:nth-child(2n+1) {
+  background-color: $primary-table-shade;
+}
+.secondary-table.striped tr:nth-child(2n) {
+  background-color: $secondary-table-shade;
+}

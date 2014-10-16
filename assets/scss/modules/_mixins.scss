@@ -1,0 +1,69 @@
+// Fonts
+@mixin font-stack($family, $font-size, $line-height) {
+  font: #{$font-size}/#{$line-height} #{$family};
+}
+
+// Layout Helpers
+@mixin g-ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin aspect-ratio($ratio) {
+  display: block;
+  position: relative;
+  width: 100%;
+  &:after {
+    content: '';
+    padding-top: $ratio;
+    display: block;
+  }
+  img {
+    width: 100%;
+    position: absolute;
+    max-height: 100%;
+  }
+}
+@mixin aspect-ratio-clip($ratio) {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  &:after {
+    content: '';
+    padding-top: $ratio;
+    display: block;
+  }
+  img {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+/* Mobile First Breakpoints */
+@mixin min-bp($point) {
+  @if $point == sm {
+    @media (min-width: 490px) { @content; }
+  }
+  @else if $point == med {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == reg {
+    @media (min-width: 960px)  { @content; }
+  }
+}
+
+/* Desktop First Breakpoints */
+@mixin max-bp($point) {
+  @if $point == xs {
+    @media (max-width: 489px) { @content; }
+  }
+  @else if $point == sm {
+    @media (max-width: 767px) { @content; }
+  }
+  @else if $point == med {
+    @media (max-width: 959px)  { @content; }
+  }
+  @media (max-width: $point) { @content; }
+}

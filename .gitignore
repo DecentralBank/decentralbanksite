@@ -1,0 +1,15 @@
+composer.lock
+.DS_Store
+.AppleDouble
+cache
+vendor
+!assets/vendor
+blog/*
+!blog/wp-content/themes/*
+.idea
+*.log
+*.lock
+logs
+._*
+node_modules/
+.sass-cache/

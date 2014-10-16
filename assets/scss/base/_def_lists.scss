@@ -1,0 +1,14 @@
+dl.primary-def-list {
+  dt {
+    color: $primary-color;
+    font-weight: $bold;
+    line-height: 1.1em;
+  }
+  dd {
+    color: $base-font-color;
+    margin-bottom: 7px;
+  }
+  &.unindent {
+    dd { margin-left: 0; }
+  }
+}

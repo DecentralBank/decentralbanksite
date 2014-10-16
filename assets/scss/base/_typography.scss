@@ -1,0 +1,133 @@
+/* #Typography
+================================================== */
+body {
+  @include font-stack($base-font-family, $base-font-size, $base-line-height);
+  color: $base-font-color;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  @include max-bp(489px) {
+      @include font-stack($base-font-family, #{$base-font-size - 1}, #{$base-line-height * .9}em );
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  a {
+    font-weight: inherit;
+  }
+}
+//h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1, .h1 {
+  font-size: 45px;
+  font-size: $base-em-font*3em;
+  letter-spacing: -3px;
+  font-weight: $header-font-weight;
+  line-height: normal;
+  margin-bottom: 14px;
+  color: $primary-color;
+  @include max-bp(xs) {
+      font-size: $base-em-font*2.3em;
+  }
+}
+h2, .h2 {
+  font-size: 34px;
+  font-size: $base-em-font*2.125em;
+  font-weight: $regular;
+  line-height: normal;
+  color: $primary-color;
+  margin-bottom: 10px;
+  letter-spacing: -2px;
+  @include max-bp(489px) {
+      font-size: $base-em-font*2em;
+  }
+}
+h3, .h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-size: $base-em-font*1.5em;
+    font-weight: $header-font-weight;
+    line-height: normal;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    color: $secondary-color;
+    @include max-bp(489px) {
+        font-size: $base-em-font*1.45em;
+    }
+}
+h4, .h4 {
+    font-size: 20px;
+    font-size: $base-em-font*1.25;
+    line-height: normal;
+    margin-bottom: 10px;
+    font-weight: $header-font-weight;
+    color: $primary-color;
+    @include max-bp(489px) {
+        font-size: $base-em-font*1.18em;
+    }
+}
+h5, .h5 {
+    font-size: $base-em-font;
+    line-height: normal;
+    margin: 10px;
+    font-weight: $header-font-weight;
+    @include max-bp(489px) {
+        font-size: $base-em-font*.95em;
+    }
+}
+h6, .h6 {
+    font-size: 12px;
+    line-height: 21px;
+}
+.subheader { color: #777; }z
+
+p { margin: 0 0 $base-em-font*1.1em 0; }
+p img { margin: 0; }
+p.lead { font-size: $base-em-font*1.5em; line-height: 27px; color: #777;  }
+
+em { font-style: italic; }
+strong { font-weight: $bold; }
+small { font-size: 80%; }
+
+/*	Blockquotes  */
+blockquote, blockquote p { font-size: $base-em-font*1.1em; line-height: #{$base-line-height}em; color: $base-font-color; font-style: italic; }
+blockquote { margin: 0 0 40px; padding: 9px 20px 0 19px; border-left: 6px solid $primary-color; }
+blockquote cite { display: block; font-size: $base-em-font*.85em; color: $primary-color; text-align: right; margin-top: 7px; font-weight: $regular; font-style: normal;}
+blockquote cite:before { content: "\2014 \0020"; color: $primary-color;}
+blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+/* #Links
+================================================== */
+a, a:visited { color: $base-link-color; text-decoration: none; outline: 0; }
+a:hover, a:focus { color: $base-link-hover-color; text-decoration: underline;}
+p a, p a:visited { line-height: inherit; }
+
+
+/* #Lists
+================================================== */
+ul, ol { margin-bottom: 20px; padding: 0}
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol,
+ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: 6px; }
+li { line-height: 18px; margin-bottom: 12px; }
+ul.large li { line-height: 21px; }
+li p { line-height: 21px; }
+
+// Import Styled Lists
+@import "lists";
+
+dl.primary-def-list dt {
+  color: $primary-color;
+  font-weight: bold;
+}
+dl.primary-def-list dd {
+  margin-bottom: 7px;
+}

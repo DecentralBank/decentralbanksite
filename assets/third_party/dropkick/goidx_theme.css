@@ -1,0 +1,119 @@
+/**
+ * Your theme name here
+ *
+ * Say something about the theme
+ *
+ * Give yourself some credit here
+ *
+ */
+
+/* Container */
+.dk_theme_goidx.dk_container ul {
+    margin: 0; }
+.dk_theme_goidx.dk_container ul li {
+    margin: 0;
+}
+
+.dk_theme_goidx.dk_container {
+    font-family: "Raleway", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px; }
+.dk_theme_goidx.dk_container:focus {
+    outline: 0; }
+.dk_theme_goidx.dk_container a {
+    cursor: pointer;
+    text-decoration: none; }
+
+/* Toggle */
+.dk_theme_goidx .dk_toggle {
+    border: 1px solid #D6D3D3;
+    color: #656565;
+    width: 100%;
+    padding: 7px 45px 7px 10px;
+    text-shadow: #fff 1px 1px 0;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    position: relative; }
+.dk_theme_goidx .dk_toggle:hover {
+    box-shadow: 1px 1px 1px 0 #E9E9E9; }
+.dk_theme_goidx .dk_toggle:after {
+    position: absolute;
+    content: '\e87a';
+    font-family: 'fontello';
+    right: 10px;
+    top: 1em;
+    color: #3a3a3a;
+    font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center;  font-variant: normal; text-transform: none;
+    line-height: 1em; margin-left: .2em;
+}
+
+/* Focus State */
+.dk_theme_goidx .dk_focus .dk_toggle {
+    border-color: #929292;
+    box-shadow: 0 0 5px #929292;
+    -moz-box-shadow: 0 0 5px #929292;
+    -webkit-box-shadow: 0 0 5px #929292; }
+
+/* Open State */
+.dk_theme_goidx.dk_open {
+    box-shadow: 0 0 5px #929292;
+    -moz-box-shadow: 0 0 5px #929292;
+    -webkit-box-shadow: 0 0 5px #929292;
+    /**
+    * Help: Dropdown menu is covered by something
+    * Try setting this value higher
+    */
+    z-index: 22; }
+.dk_theme_goidx.dk_open .dk_toggle {
+    background-color: #ECECEC;
+    border-color: #8C8C8C;
+    color: #CCC;
+    box-shadow: inset 0 -2px 5px #CCC;}
+
+/* Options Menu */
+.dk_theme_goidx .dk_options {
+    background: #fefefe;
+    /* Removes transparent background on iOS5+ scroll */
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px; }
+.dk_theme_goidx .dk_options a {
+    background-color: #fff;
+    border-bottom: 1px solid #999;
+    font-weight: bold;
+    color: #6B6B6B;
+    padding: 8px 10px; }
+.dk_theme_goidx .dk_options a:hover,
+.dk_theme_goidx .dk_options .dk_option_current a {
+    background-color: #585858;
+    border-bottom-color: #424242;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: none; }
+.dk_theme_goidx .dk_options li:last-child a {
+    border-bottom: none; }
+.dk_theme_goidx .dk_options .disabled {
+    cursor: default; }
+.dk_theme_goidx .dk_options .disabled a {
+    color: #aaa; }
+.dk_theme_goidx .dk_options .disabled:hover, .dk_theme_goidx .dk_options .disabled:hover a {
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: #999;
+    text-shadow: none; }
+
+/* Inner Options */
+.dk_theme_goidx .dk_options_inner {
+    max-height: 235px;
+    border: 1px solid #8c8c8e;
+    border-bottom-width: 2px;
+    border-bottom-color: #999;
+    color: #333;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px; }
+
+/* Set a width property here */

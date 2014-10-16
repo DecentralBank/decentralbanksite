@@ -1,0 +1,48 @@
+.home .widget-wrap .bx-wrapper .bx-viewport {
+  background: none;
+}
+.featured-listings.module {
+
+}
+.featured-listings .widget-wrap {
+  .main-image {
+    position: relative;
+    width: 100%;
+    display: block;
+    &:after {
+      content: '';
+      padding-top: 75%;
+      display: block;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      max-height: 100%;
+    }
+  }
+  h2 {
+    font-size: 15px;
+    margin:0px;
+    padding:0px;
+    line-height: normal;
+    letter-spacing: normal;
+    font-weight: $bold;
+  }
+  .widget-listing {
+    color: #3C3C3C;
+    text-decoration: none;
+    .button {
+      margin-bottom: 5px;
+    }
+  }
+  .widget-listing-info {
+    padding: 10px;
+    text-align: center;
+    .price {
+      line-height: normal;
+      font-size: 24px;
+      font-weight: $bold;
+      color: $secondary-color;
+    }
+  }
+}

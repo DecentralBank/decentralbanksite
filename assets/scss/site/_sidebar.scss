@@ -1,0 +1,84 @@
+/* #Sidebar Styles
+ **********************************/
+.contactAgentSide {
+  margin-bottom: 0;
+  label {
+    color: #939293;
+    font-size: 16px;
+    .star {
+      color: #10439A;
+    }
+    &.help-inline {
+      display: inline-block;
+      margin-bottom: 15px;
+      background: #FF5E5E;
+      color: #FFF;
+      padding: 3px 10px;
+    }
+  }
+  input[type="text"],
+  textarea {
+    border: 1px solid #e9e9e9;
+    margin-bottom: 10px;
+    @include border-radius(0);
+    &.help-inline {
+      background: #FFBABA;
+      margin-bottom: 0;
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
+  input[type="text"]{
+    width: 75%;
+    padding: 10px 4px;
+  }
+  textarea {
+    width: 100%;
+    padding-right: 7px;
+    &.success {
+      background: white;
+      color: #777;
+    }
+  }
+  .button {
+    font-size: 18px;
+    padding: 8px 25px;
+  }
+}
+.main-sidebar {
+  .success:before {
+    content: '‚úî';
+    display: inline-block;
+    font-size: 250%;
+    line-height: 1;
+    padding: 0 10px;
+    vertical-align: middle;
+    margin-right: 10px;
+    float:none;
+  }
+  .ad-module img {
+    width: 100%;
+    height: auto;
+  }
+
+  .ad-space {
+    a.adv {
+      border: 1px solid #E9E9E9;
+      display: block;
+      margin-bottom: 15px;
+      @include transition(box-shadow .2s ease-in-out);
+      &:hover {
+        box-shadow: 1px 1px 1px 0px #E9E9E9;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+/* Vcards */
+.main-sidebar {
+  @import "vcard1";
+}

@@ -1,0 +1,121 @@
+/* #Home Page Styles
+ ***************************/
+.home {
+  .main.container {
+    padding-top: 0;
+  }
+  .introduction {
+    p {
+      font-size: $base-em-font*1.1em;
+      line-height: 1.6em;
+    }
+  }
+  .slider-wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    .bx-viewport > ul {
+      margin-top: 0;
+    }
+    .slide-cont {
+      position: relative;
+    }
+    .slider-headline {
+      background: rgba($primary-color, .75);
+      position: absolute;
+      bottom: 0;
+      color: white;
+      padding: 13px 4px;
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: .9em;
+      @include min-bp(sm) {
+        font-size: 1.2em;
+      }
+      @include min-bp(med){
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+.home .video-features{
+  .feature {
+    &.big {
+      .title {
+        @extend .h2;
+      }
+    }
+    .title {
+      @include g-ellipsis;
+      font-weight: $regular;
+    }
+  }
+  .video {
+    position: relative;
+    a {
+      position: relative;
+      display: block;
+      img {
+        display: block;
+      }
+      .play-mask {
+        position: absolute;
+        background: rgba($primary-color, .2);
+        @include transition(background .2s ease-in-out);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        i {
+          position: absolute;
+          font-size: 2.4em;
+          top: 50%;
+          margin-top: -.75em;
+          margin-left: -.75em;
+          left: 50%;
+          @include transition(color .2s ease-in-out);
+          color: #C8302D;
+          &::after {
+            display: block;
+            width: 2.4em;
+          }
+        }
+      }
+      &:hover {
+        .play-mask {
+          background: rgba($primary-color, .7);
+          i {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .see-all {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    @include min-bp(med) {
+      font-size: 1.6em;
+    }
+  }
+}
+
+/* Featured Condo Slider Widget */
+section.featured-listings {
+  background: #F5F5F5;
+  padding: 25px 0;
+  /* Home Featured Condos Widget Box */
+  .w-featured-listings {
+    @import "../goidx/widget_listings_box_slider";
+  }
+}
+.w-featured-condos {
+  margin-bottom: 30px;
+  position: relative;
+
+  @import "../goidx/widget_condo_box_slider";
+}

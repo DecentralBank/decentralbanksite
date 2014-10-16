@@ -1,0 +1,69 @@
+/* Tab System Variables */
+$tab-border-color: $primary-color;
+$tab-bg-color: none;
+$tab-text-color: $primary-color;
+
+$tab-hover-border-color: $primary-color;
+$tab-hover-color: $primary-color;
+$tab-hover-text-color: white;
+
+$tab-active-border-color: $primary-color;
+$tab-active-color: $primary-color;
+$tab-active-text-color: white;
+
+/* TABS
+ **************/
+.tab-system {
+  > div {
+    position: absolute !important;
+    left: -999999px;
+    top: -999999px;
+    &.active {
+      position: relative !important;
+      left: 0;
+      top: 0;
+    }
+  }
+  ul.tabs {
+    list-style: none;
+    margin-bottom: 10px;
+    > li {
+      display: inline-block;
+      float: left;
+      padding: 0 2px;
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid $tab-border-color;
+      a {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+        color: $tab-text-color;
+        background: $tab-bg-color;
+        border: 1px solid $tab-border-color;
+        border-bottom: 0;
+        text-decoration: none;
+      }
+      &:hover {
+        a {
+          background: $tab-hover-color;
+          color: $tab-hover-text-color;
+          border: 1px solid $tab-hover-border-color;
+          border-bottom: none;
+        }
+      }
+      &.active {
+        a {
+          background: $tab-active-color;
+          color: $tab-active-text-color;
+          border: 1px solid $tab-active-border-color;
+          border-bottom: none;
+          font-weight: $bold;
+        }
+      }
+    }
+    /* Tab Widths */
+    &.w-half  > li { width: 50%; }
+    &.w-fourth > li { width: 50%; @include min-bp(sm){width: 25%;} }
+  }
+}
