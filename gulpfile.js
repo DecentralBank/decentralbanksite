@@ -14,7 +14,8 @@ gulp.task('styles', function() {
             {
                 style: 'expanded',
                 compass: true,
-                trace: true
+                trace: true,
+                sourcemapPath: '../../scss'
             }))
         .pipe(autoprefixer('last 2 version', 'safari 5','ie 9','ios 6', 'android 4'))
         .pipe(gulp.dest('assets/dist/css'))

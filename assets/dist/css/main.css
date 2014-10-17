@@ -396,14 +396,14 @@ th {
 /* #Typography
 ================================================== */
 body {
-  font: 16px/1.5 Helvetica Neue, open-sans sans-serif;
+  font: 16px/1.5 lato , open-sans sans-serif;
   color: #313131;
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
 }
 @media (max-width: 489px) {
   body {
-    font: 15px/1.35em Helvetica Neue, open-sans sans-serif;
+    font: 15px/1.35em lato , open-sans sans-serif;
   }
 }
 
@@ -417,8 +417,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 h1, .h1 {
   font-size: 45px;
   font-size: 3em;
-  letter-spacing: -3px;
-  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  font-weight: 900;
   line-height: normal;
   margin-bottom: 14px;
   color: #F9AD09;
@@ -437,7 +438,7 @@ h1, .h1 {
 h2, .h2, .home .video-features .feature.big .title {
   font-size: 34px;
   font-size: 2.125em;
-  font-weight: 400;
+  font-weight: 700;
   line-height: normal;
   color: #F9AD09;
   margin-bottom: 10px;
@@ -453,7 +454,7 @@ h3, .h3 {
   font-size: 24px;
   text-transform: uppercase;
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 900;
   line-height: normal;
   margin-bottom: 10px;
   letter-spacing: -1px;
@@ -470,7 +471,7 @@ h4, .h4 {
   font-size: 1.25;
   line-height: normal;
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 900;
   color: #F9AD09;
 }
 @media (max-width: 489px) {
@@ -483,7 +484,7 @@ h5, .h5 {
   font-size: 1;
   line-height: normal;
   margin: 10px;
-  font-weight: 500;
+  font-weight: 900;
 }
 @media (max-width: 489px) {
   h5, .h5 {
@@ -520,7 +521,7 @@ em {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 small {
@@ -571,13 +572,13 @@ hr {
 /* #Links
 ================================================== */
 a, a:visited {
-  color: #F9AD09;
+  color: #070716;
   text-decoration: none;
   outline: 0;
 }
 
 a:hover, a:focus {
-  color: #e39d06;
+  color: lighthen(#070716, 5%);
   text-decoration: underline;
 }
 
@@ -704,7 +705,7 @@ input[type="reset"],
 input[type="button"] {
   background: #F9AD09;
   border: 1px solid #F9AD09;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 0;
   color: white;
   display: inline-block;
@@ -1319,7 +1320,7 @@ ol.styled-list {
 
 dl.primary-def-list dt {
   color: #F9AD09;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1em;
 }
 dl.primary-def-list dd {
@@ -4126,7 +4127,7 @@ input[type="radio"] + .radio-label:empty:before {
   color: white;
   border: 1px solid #F9AD09;
   border-bottom: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 .tab-system ul.tabs.w-half > li {
   width: 50%;
@@ -4170,15 +4171,13 @@ input[type="radio"] + .radio-label:empty:before {
 /* Header nav bar */
 .main-header {
   border-top: 7px solid #F9AD09;
-  -webkit-box-shadow: 0 1px 2px 0px rgba(105, 105, 105, 0.2);
-          box-shadow: 0 1px 2px 0px rgba(105, 105, 105, 0.2);
   width: 100%;
   z-index: 20;
 }
 .main-header .top-wrap {
   padding: 5px 0;
   background: #F9AD09;
-  color: #313131;
+  color: white;
 }
 @media (min-width: 768px) {
   .main-header .top-wrap {
@@ -4192,15 +4191,17 @@ input[type="radio"] + .radio-label:empty:before {
   float: right;
   text-align: right;
 }
-.main-header .top-wrap .top-right .tagline {
-  font-size: 1.4em;
-  margin-bottom: 0;
-  margin-top: 0;
+.main-header .top-wrap .top-right .links a.button {
+  display: inline-block;
+  padding: 8px 40px;
 }
 .main-header .top-wrap .top-right a {
   display: block;
   font-size: 1.4em;
-  font-weight: 600;
+  font-weight: 900;
+  color: white;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 .main-header .bottom-wrap {
   background: #F9AD09;
@@ -4413,8 +4414,9 @@ a:hover .icon-cbmore {
     display: block;
     padding: 12px 10px 12px;
     color: white;
-    font-size: 1.2em;
-    font-weight: 400;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
     text-decoration: none;
   }
   .the-nav > .nav > li a.active {
@@ -4967,7 +4969,7 @@ section.featured-listings .w-featured-listings .widget-listing .w-ft-list .pre-i
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .pre-info .price {
   color: #070716;
-  font-weight: 600;
+  font-weight: 900;
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-info {
   position: absolute;
@@ -4996,7 +4998,7 @@ section.featured-listings .w-featured-listings .widget-listing .w-ft-list:hover 
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-info .address-1 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 900;
   margin: 0px;
   padding: 0px;
   color: #FFF;
@@ -5019,12 +5021,12 @@ section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-i
   display: inline-block;
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-info .bed-bath span {
-  font-weight: 600;
+  font-weight: 900;
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-info > .price {
   font-size: 22px;
   line-height: 28px;
-  font-weight: 600;
+  font-weight: 900;
 }
 section.featured-listings .w-featured-listings .widget-listing .w-ft-list .the-info a.details {
   color: white;

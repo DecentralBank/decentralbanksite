@@ -6,7 +6,7 @@ $sm-nav-bg: $primary-color;
 $med-nav-bg: $primary-color;
 $med-navbar-bg: $primary-color;
 $med-navbar-color: white;
-$med-navbar-font-weight: $regular;
+$med-navbar-font-weight: $extrabold;
 $med-navbar-active-link-color: lighten($primary-color, 30%);
 $med-navbar-active-caret-color: lighten($primary-color, 30%);
 $med-navbar-active-link-bg: $primary-color;
@@ -57,7 +57,7 @@ $layout-min-width: 320px;
 /* Header nav bar */
 .main-header {
   border-top: 7px solid $primary-color;
-  box-shadow: 0 1px 2px 0px rgba(105, 105, 105, 0.20);
+  // box-shadow: 0 1px 2px 0px rgba(105, 105, 105, 0.20);
   //  border-bottom: 1px solid $primary-color;
   width: 100%;
   z-index: 20;
@@ -65,7 +65,7 @@ $layout-min-width: 320px;
   .top-wrap{
     padding: 5px 0;
     background: $sm-nav-bg;
-    color: $base-font-color;
+    color: white;
     @include min-bp(med) {
       background: $med-nav-bg;
       padding: 0px 0;
@@ -75,15 +75,19 @@ $layout-min-width: 320px;
       display: inline-block;
       float: right;
       text-align: right;
-      .tagline {
-        font-size: 1.4em;
-        margin-bottom: 0;
-        margin-top: 0;
+      .links {
+        a.button {
+          display: inline-block;
+          padding: 8px 40px;
+        }
       }
       a {
         display: block;
         font-size: 1.4em;
         font-weight: $extrabold;
+        color: white;
+        border: 2px solid white;
+        border-radius: 2px;
       }
     }
   }
@@ -269,8 +273,9 @@ a {
           display: block;
           padding: 12px 10px 12px;
           color: $med-navbar-color;
-          font-size: $base-em-font*1.2em;
+          font-size: $base-em-font*1em;
           font-weight: $med-navbar-font-weight;
+          text-transform: uppercase;
           text-decoration: none;
           &.active {
             color: $med-navbar-active-link-color;

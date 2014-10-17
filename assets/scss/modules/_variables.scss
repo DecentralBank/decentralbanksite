@@ -4,8 +4,8 @@ $primary-color: #F9AD09;
 $secondary-color: #070716;
 
 // Links
-$base-link-color: $primary-color;
-$base-link-hover-color: darken($base-link-color, 5);
+$base-link-color: $secondary-color;
+$base-link-hover-color: lighthen($base-link-color, 5%);
 
 // Button Colors
 $button-color: $primary-color;
@@ -18,18 +18,18 @@ $button-hover-text-color: white;
 // Font weights
 $light: 300;
 $regular: 400;
-$bold: 500;
-$extrabold: 600;
+$bold: 700;
+$extrabold: 900;
 
 // Base Font
-$base-font-family: 'Helvetica Neue', 'open-sans' sans-serif;
+$base-font-family: 'lato ', 'open-sans' sans-serif;
 $base-font-weight: $regular;
 $base-font-size: 16px;
 $base-em-font: 1;
 $base-line-height: 1.5;
 
 // Headings
-$header-font-weight: $bold;
+$header-font-weight: $extrabold;
 
 // Tables
 $primary-table-color: $secondary-color;

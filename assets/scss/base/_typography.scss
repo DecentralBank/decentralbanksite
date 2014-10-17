@@ -19,7 +19,8 @@ h1, h2, h3, h4, h5, h6 {
 h1, .h1 {
   font-size: 45px;
   font-size: $base-em-font*3em;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
   font-weight: $header-font-weight;
   line-height: normal;
   margin-bottom: 14px;
@@ -31,7 +32,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 34px;
   font-size: $base-em-font*2.125em;
-  font-weight: $regular;
+  font-weight: $bold;
   line-height: normal;
   color: $primary-color;
   margin-bottom: 10px;
