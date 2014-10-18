@@ -4193,15 +4193,20 @@ input[type="radio"] + .radio-label:empty:before {
 }
 .main-header .top-wrap .top-right .links a.button {
   display: inline-block;
-  padding: 8px 40px;
+  margin-right: 5px;
 }
 .main-header .top-wrap .top-right a {
   display: block;
   font-size: 1.4em;
   font-weight: 900;
   color: white;
-  border: 2px solid white;
+  border: 4px solid white;
   border-radius: 2px;
+  padding: 8px 40px;
+}
+.main-header .top-wrap .top-right a:hover {
+  background: white;
+  color: #F9AD09;
 }
 .main-header .bottom-wrap {
   background: #F9AD09;
